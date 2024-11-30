@@ -138,9 +138,26 @@ ch4_4_2 = do
   putStrLn "--- tail2 ---"
   print (tail2 ['a', 'b', 'c']) -- bc
 
+odds :: Int -> [Int]
+odds n = map (\x -> x * 2 + 1) [0 .. n - 1]
+
 ch4_5 :: IO ()
 ch4_5 = do
   putStrLn "--- ch4_5 ---"
+  print ((\x -> x + x) 2)
+  print (odds 1)
+
+-- ╔════════════════════════════╗
+-- ║          Exercises         ║
+-- ╚════════════════════════════╝
+
+halve2 :: [a] -> ([a], [a])
+halve2 xs = length xs
+
+iti :: IO ()
+iti = do
+  putStrLn "--- Q1 ---"
+  print (halve2 [1, 2, 4])
 
 main :: IO ()
 main = do
@@ -151,3 +168,4 @@ main = do
   ch4_4_1
   ch4_4_2
   ch4_5
+  iti
